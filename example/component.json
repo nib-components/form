@@ -1,0 +1,16 @@
+{
+  "name": "components",
+  "paths": [
+    "./local"
+  ],
+  "local": [
+    "contact-form"
+  ],
+  "main": "",
+  "scripts": [],
+  "dependencies": {
+    "nib-components/underscore": "2cd0b495780f3cda38568d0ec0cdb78f4015a241",
+    "nib-components/jquery": "5454a916126a5f44af1085a8d5dccb96062d0ac4",
+    "nib-components/backbone": "fcc49fa93891c1e87068efaa1e9b978fb6997fc1"
+  }
+}

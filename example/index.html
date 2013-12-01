@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>Contact Form</title>
+    <link rel="stylesheet" type="text/css" href="./build/build.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      form {
+        padding: 40px;
+        background: #eee;
+        width: 600px;
+        margin: 100px auto;
+      }
+      .parent {
+        margin-bottom: 40px;
+        position: relative;
+      }
+      .is-hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="js-contact-form" action="#">
+      <h1>Contact Form</h1>
+
+      <!-- validate a group of checkboxs -->
+      <div
+        class="parent"
+        data-validate-group="gender"
+        data-message-position="south"
+        data-message-align="center"
+        style="width: 200px"
+      >
+        <label>
+          <input
+            data-model="gender"
+            name="gender"
+            type="radio"
+            value="male"/>Male</label>
+        <label>
+          <input
+            data-model="gender"
+            name="gender"
+            type="radio"
+            value="female"/>Female</label>
+        <label>
+          <input
+            data-model="gender"
+            name="gender"
+            type="radio"
+            value="other"/>Other</label>
+
+        <div data-visible="showOtherField">
+          <label for="name">What is your gender?
+            <input
+              type="text"
+              name="name"
+              data-model="otherGender"
+              data-message-position="south"
+              data-message-align="center"/>
+          </label>
+        </div>
+      </div>
+
+      <!-- validate a select box -->
+      <div class="parent">
+        <label for="ageGroup">What is your age group?</label>
+        <select
+          data-model="ageGroup"
+          data-message-position="south"
+          data-message-align="center"
+          name="ageGroup"
+        >
+          <option value="">Please select</option>
+          <option value="10-20">10 - 20</option>
+          <option value="21-30">21 - 30</option>
+          <option value="31plus">31 and above</option>
+        </select>
+      </div>
+
+      <!-- validate a text field -->
+      <div class="parent">
+        <label for="firstName">First name
+          <input
+            type="text"
+            name="firstName"
+            data-model="firstName"
+            data-message-position="south"
+            data-message-align="center"/>
+        </label>
+      </div>
+
+      <div class="parent">
+        <label for="firstName">Last name
+          <input
+            type="text"
+            name="lastName"
+            data-model="lastName"
+            data-message-position="south"
+            data-message-align="center"/>
+        </label>
+      </div>
+
+      <div class="parent">
+        <label for="firstName">Email
+          <input
+            type="email"
+            name="email"
+            data-model="email"
+            data-message-position="south"
+            data-message-align="center"/>
+        </label>
+      </div>
+
+      <div class="parent">
+        <label for="firstName">Phone
+          <input
+            type="phone"
+            name="phone"
+            data-model="phone"
+            data-message-position="south"
+            data-message-align="center"/>
+        </label>
+      </div>
+
+      <!-- validate a single checkbox -->
+      <div class="parent">
+        <label for="T&C">
+          <input
+            data-model="T&C"
+            data-message-position="south"
+            data-message-align="center"
+            type="checkbox"
+            name="T&C"
+            value="true">
+            I have read these amazing terms and conditions
+        </label>
+      </div>
+
+      <button on-click="submit" type="submit">Submit</button>
+    </form>
+
+
+    <script src="./build/build.js"></script>
+    <script>
+      require('jquery');
+      require('underscore');
+      require('backbone');
+
+      // require the component
+      var ContactForm = require('contact-form');
+
+      // get the form element
+      var contactFormEl = document.querySelector('.js-contact-form');
+
+      // Create a new subclass passing in the element
+      var contactForm = new ContactForm({
+        el: contactFormEl
+      });
+
+      // call render
+      contactForm.render();
+    </script>
+  </body>
+</html>
