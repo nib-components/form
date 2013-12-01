@@ -16,18 +16,18 @@ A basic reactive form view
 
   var myForm = Form.create({
 
-    // inherit initialise methods (optional)
     initialize: function() {
+      // inherit initialise methods (optional)
       Form.prototype.initialize.apply(this, arguments);
     },
 
-    // inherit render methods (optional)
     render: function() {
+      // inherit render methods (optional)
       Form.prototype.render.call(this);
     },
 
-    // inherit submit methods (optional)
     submit: function(event){
+      // inherit submit methods (optional)
       Form.prototype.submit.call(this, event);
     },
   });
