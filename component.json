@@ -10,8 +10,6 @@
     "nib-components/form-messages": "*",
     "nib-components/form-messages-tip": "*",
     "anthonyshort/object-validator": "*",
-    "nib-components/validation-methods": "0.0.4",
-    "nib-components/custom-validation": "0.0.3",
     "nib-styles/tip": "0.2.0"
   },
   "main": "index.js",
