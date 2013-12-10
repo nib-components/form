@@ -75,6 +75,5 @@ var Form = View.create({
     return errors;
   }
 });
-
 emitter(Form.prototype);
 module.exports = Form;
