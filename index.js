@@ -32,7 +32,11 @@ var Form = View.create({
   submit: function(event) {
     var errors = this.validate();
     if(errors.length) {
-      event.preventDefault();
+      if (event.preventDefault) {
+        event.preventDefault();
+      } else {
+        event.returnValue = false;
+      }
     }
   },
   validateField: function(attr, value){
