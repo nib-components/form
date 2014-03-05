@@ -1,12 +1,12 @@
 {
   "name": "form",
   "description": "A basic form view",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "anthonyshort/observable": "0.3.0",
     "anthonyshort/view": "0.1.0",
     "component/emitter": "1.0.0",
-    "nib-components/reactive": "*",
+    "nib-components/reactive": "0.14.1",
     "nib-components/form-messages": "*",
     "nib-components/form-messages-tip": "*",
     "anthonyshort/object-validator": "*",
