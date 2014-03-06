@@ -29,7 +29,7 @@ A basic reactive form view
     submit: function(event){
       // inherit submit methods (optional)
       Form.prototype.submit.call(this, event);
-    },
+    }
   });
 
   module.exports = myForm;
