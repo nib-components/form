@@ -1,7 +1,7 @@
 {
   "name": "form",
   "description": "A basic form view",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "dependencies": {
     "anthonyshort/observable": "0.3.0",
     "anthonyshort/view": "0.1.0",
