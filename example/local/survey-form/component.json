@@ -1,0 +1,13 @@
+{
+  "name": "survey-form",
+  "description": "Random survey form demonstrating validation",
+  "dependencies": {
+    "nib-components/form": "0.0.2",
+    "nib-components/validation-methods": "0.0.4"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "lib/rules.js"
+  ]
+}

@@ -1,168 +1,119 @@
+
 <html>
   <head>
-    <title>Contact Form</title>
-    <link rel="stylesheet" type="text/css" href="./build/build.css">
+    <link rel="stylesheet" type="text/css" href="../example/build/build.css">
     <style>
       body {
-        font-family: sans-serif;
-        font-size: 14px;
+        padding: 50px;
       }
       form {
-        padding: 40px;
-        background: #eee;
         width: 600px;
-        margin: 100px auto;
-      }
-      .parent {
-        margin-bottom: 40px;
-        position: relative;
       }
       .is-hidden {
         display: none;
       }
+      .parent {
+        position: relative;
+        margin-bottom: 40px;
+      }
     </style>
   </head>
   <body>
-    <form class="js-contact-form" action="#">
-      <h1>Contact Form</h1>
+    <form class="js-skateboarding-survey">
 
-      <!-- validate a group of checkboxs -->
-      <div
-        class="parent"
-        data-validate-group="gender"
-        data-message-position="south"
-        data-message-align="center"
-        style="width: 200px"
-      >
+      <!--
+        validate a 'group' of checkboxs
+      -->
+      <div class="parent" data-validate-group="graphics" data-message-position="south" data-message-align="center">
+        <div>Which skater had the best deck graphics?</div>
         <label>
-          <input
-            data-model="gender"
-            name="gender"
-            type="radio"
-            value="male"/>Male</label>
-        <label>
-          <input
-            data-model="gender"
-            name="gender"
-            type="radio"
-            value="female"/>Female</label>
-        <label>
-          <input
-            data-model="gender"
-            name="gender"
-            type="radio"
-            value="other"/>Other</label>
+          <input class="graphics" type="radio" name="graphics" value="mountain">Lance Mountain
+        </label>
 
-        <div data-visible="showOtherField">
-          <label for="name">What is your gender?
-            <input
-              type="text"
-              name="name"
-              data-model="otherGender"
-              data-message-position="south"
-              data-message-align="center"/>
+        <label>
+          <input class="graphics" type="radio" name="graphics" value="caballero"/>Steve Caballero
+        </label>
+
+        <label>
+          <input class="graphics" type="radio" name="graphics" value="other"/>Other
+        </label>
+        <!-- show text field is 'other' is true -->
+        <div data-visible="showOther">
+          <label>
+            Well, who had the best graphics then...?
+            <input type="text" name="graphicsOther" data-model="graphicsOther" data-message-position="south" data-message-align="center"/>
           </label>
         </div>
       </div>
 
+      <!--
+        validate a 'group' of radio buttons
+      -->
+      <div class="parent" data-validate-group="biggestOllie" data-message-position="south" data-message-align="center">
+        <div>Who had the biggest ollie?</div>
+        <label>
+          <input class="ollie" name="ollieGelfand" type="checkbox" value="gelfand"/>Alan Gelfand
+        </label>
+
+        <label>
+          <input class="ollie" name="ollieCaballero" type="checkbox" value="caballero"/>Steve Caballero
+        </label>
+
+        <label>
+          <input class="ollie" name="ollieGuerrero" type="checkbox" value="guerrero"/>Tommy Guerrero
+        </label>
+      </div>
+
       <!-- validate a select box -->
       <div class="parent">
-        <label for="ageGroup">What is your age group?</label>
-        <select
-          data-model="ageGroup"
-          data-message-position="south"
-          data-message-align="center"
-          name="ageGroup"
-        >
-          <option value="">Please select</option>
-          <option value="10-20">10 - 20</option>
-          <option value="21-30">21 - 30</option>
-          <option value="31plus">31 and above</option>
+        <div>Who shredded pools better than anyone else?</div>
+        <select name="poolSkater" data-model="poolSkater" data-message-position="south" data-message-align="center">
+          <option value="" selected disabled>Please select</option>
+          <option value="alva">Tony Alva</option>
+          <option value="peters">Duane Peters</option>
+          <option value="mcgill">Mike McGill</option>
         </select>
       </div>
 
       <!-- validate a text field -->
       <div class="parent">
-        <label for="firstName">First name
-          <input
-            type="text"
-            name="firstName"
-            data-model="firstName"
-            data-message-position="south"
-            data-message-align="center"/>
+        <label>
+          <div>Which skater got the biggest air?</div>
+          <input type="text" name="biggestAir" value="" data-model="biggestAir" data-message-position="south" data-message-align="center"/>
         </label>
       </div>
 
+      <!-- validate a checkbox -->
       <div class="parent">
-        <label for="firstName">Last name
-          <input
-            type="text"
-            name="lastName"
-            data-model="lastName"
-            data-message-position="south"
-            data-message-align="center"/>
+        <label>
+          <input name="terms" data-model="terms" data-message-position="south" data-message-align="center" type="checkbox" value="true">I have read the terms and conditions
         </label>
       </div>
 
-      <div class="parent">
-        <label for="firstName">Email
-          <input
-            type="email"
-            name="email"
-            data-model="email"
-            data-message-position="south"
-            data-message-align="center"/>
-        </label>
-      </div>
-
-      <div class="parent">
-        <label for="firstName">Phone
-          <input
-            type="phone"
-            name="phone"
-            data-model="phone"
-            data-message-position="south"
-            data-message-align="center"/>
-        </label>
-      </div>
-
-      <!-- validate a single checkbox -->
-      <div class="parent">
-        <label for="T&C">
-          <input
-            data-model="T&C"
-            data-message-position="south"
-            data-message-align="center"
-            type="checkbox"
-            name="T&C"
-            value="true">
-            I have read these amazing terms and conditions
-        </label>
-      </div>
-
+      <!-- on-click (reactive binding), call the forms submit() method -->
       <button on-click="submit" type="submit">Submit</button>
     </form>
 
-
     <script src="./build/build.js"></script>
     <script>
-      require('jquery');
+      // crappy dependencies
       require('underscore');
+      require('jquery');
       require('backbone');
 
-      // require the component
-      var ContactForm = require('contact-form');
+      var SurveyForm = require('survey-form');
 
-      // get the form element
-      var contactFormEl = document.querySelector('.js-contact-form');
+      // the view
+      var SurveyFormEl = document.querySelector('.js-skateboarding-survey');
 
       // Create a new subclass passing in the element
-      var contactForm = new ContactForm({
-        el: contactFormEl
+      // Note: This will call the forms initialize() method immediately
+      var surveyForm = new SurveyForm({
+        el: SurveyFormEl
       });
 
-      // call render
-      contactForm.render();
+      // call the form render() method
+      surveyForm.render();
     </script>
   </body>
 </html>
