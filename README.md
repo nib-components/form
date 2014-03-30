@@ -3,7 +3,9 @@ form
 
 A reactive form view with validation.
 
-This component creates a reactive form view based on [component/reactive v 0.14.1](https://github.com/component/reactive/tree/0.14.1), and also relies on legacy dependencies such as [jQuery](https://github.com/nib-components/jquery), [Backbone](https://github.com/nib-components/backbone) and [Underscore](https://github.com/nib-components/underscore).
+This component creates a reactive form view based on [component/reactive v 0.14.1](https://github.com/component/reactive/tree/0.14.1).
+
+This version **does not** rely on legacy dependencies such as [jQuery](https://github.com/nib-components/jquery), [Backbone](https://github.com/nib-components/backbone) and [Underscore](https://github.com/nib-components/underscore), like the previous version.
 
 This component harnesses [custom binding](https://github.com/nib-components/reactive/blob/master/index.js) for the attribute **data-model="{attr}"**.
 
@@ -24,7 +26,7 @@ You will need to create a local component for each form.
 
 ```zsh
 site
- - index.js 
+ - index.js
  - component.json
  - components
  - local
@@ -39,7 +41,7 @@ site
 A form component requires (but not limited to) a minimum of 4 methods.
 
 #### initialize()
-This method is called when your form is initiated. 
+This method is called when your form is initiated.
 This method defines the model and rules for the view.
 Anything in here will be processed before the form is actually 'reactive'.
 
@@ -140,7 +142,7 @@ contactForm.render();
 
 #Model
 
-On initialize() of our form, we're given a model. This model is what we use to validate our form data. 
+On initialize() of our form, we're given a model. This model is what we use to validate our form data.
 
 This model is not just restricted to form data though. We can store anything on it and use it to enact with a [reactive](https://github.com/component/reactive/tree/0.14.1) view.
 
@@ -174,7 +176,7 @@ This make it super easy to prefill elements as soon as a form is rendered.
 ```js
 render: function() {
   Form.prototype.render.call(this);
-  
+
   this.model.set('isCool', 'no');
 },
 ```
@@ -221,7 +223,7 @@ To do this, you wrap the elements in a container consisting of the **data-valida
   <label>
     <input class="ollie" name="ollieGuerrero" type="checkbox" value="guerrero"/>Tommy Guerrero
   </label>
-  
+
 </div>
 ```
 
