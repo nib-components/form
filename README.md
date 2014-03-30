@@ -340,4 +340,4 @@ updateDateOfBirth: function(){
 
 #Example
 
-[View code of a working example](https://github.com/nib-components/form/tree/0.0.2/example/local/survey-form)
+[View code of a working example](https://github.com/nib-components/form/tree/1.0.0/example/local/survey-form)
